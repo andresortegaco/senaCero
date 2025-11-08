@@ -49,7 +49,7 @@ public class ConexionJDBCSupervigi {
             "    user t2 \n" +
             "WHERE \n" +
             "    t1.name = t2.name  " +
-            "    AND t1.id_cargo > t2.id_user;");
+            "    AND t1.id_user > t2.id_user;");
             rs = statement.executeQuery ("SELECT * FROM USER");
             rs.next();
             do{
