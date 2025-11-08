@@ -48,9 +48,9 @@ public class ConexionJDBCSupervigi {
             "INNER JOIN \n" +
             "    user t2 \n" +
             "WHERE \n" +
-            "    t1.name = t2.nombre_cargo  " +
-            "    AND t1.id_cargo > t2.id_cargo;");
-            rs = statement.executeQuery ("SELECT * FROM CARGOS");
+            "    t1.name = t2.name  " +
+            "    AND t1.id_cargo > t2.id_user;");
+            rs = statement.executeQuery ("SELECT * FROM USER");
             rs.next();
             do{
                 System.out.println(rs.getInt("id_user")+ " : " + rs.getString("name")+" :  " + rs.getString("last_name")+" :" + rs.getString("phone"));
