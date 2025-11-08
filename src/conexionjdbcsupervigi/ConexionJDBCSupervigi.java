@@ -11,7 +11,7 @@ package conexionjdbcsupervigi;
 //Se importa la libreria de java sql
 import java.sql.*;
 
-public class conexionJDBCsupervgi {
+public class ConexionJDBCSupervigi {
 
  public static void main(String[] args) {
         try {
@@ -22,19 +22,18 @@ public class conexionJDBCsupervgi {
             Statement statement;
             ResultSet rs;
             
-            
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 
                 // TODO code application logic here
             } catch (ClassNotFoundException ex) {
-                System.getLogger(EjemploConexionJDBC.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+                System.getLogger(ConexionJDBCSupervigi.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
             }
             
             System.out.println("Aqui insertamos un nuevo usuario");
             conexion = DriverManager.getConnection(url,usuario,password);
             statement = conexion.createStatement();
-            statement.executeUpdate("INSERT INTO USER(name,last_name,email,phone,passeord) VALUES('Joaquin','Ardila','joaco@sv.co','3001234567','3691215')");
+            statement.executeUpdate("INSERT INTO USER(name,last_name,email,phone,password) VALUES('Joaquin','Ardila','joaco@sv.co','3001234567','3691215')");
             rs = statement.executeQuery ("SELECT * FROM USER");
             rs.next();
             do{
@@ -59,7 +58,7 @@ public class conexionJDBCsupervgi {
             
             
         } catch (SQLException ex) {
-            System.getLogger(EjemploConexionJDBC.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+            System.getLogger(ConexionJDBCSupervigi.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
         }
         
         
